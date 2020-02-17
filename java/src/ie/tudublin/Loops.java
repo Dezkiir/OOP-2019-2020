@@ -31,7 +31,8 @@ public class Loops extends PApplet
 
 	public void loops2()
 	{
-		int numCircles  = (int) (20 * (mouseX / (float) width)) ;
+		// To cast to float you can also say 2.0f or any Number.0f
+		int numCircles  = (int) (20 * (mouseX / (float) width)) ;	
 		
 		float w = width / (float) numCircles;
 		float radius = w / 2.0f;
