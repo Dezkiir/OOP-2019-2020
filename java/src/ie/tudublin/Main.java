@@ -9,12 +9,6 @@ public class Main
         processing.core.PApplet.runSketch( a, new MusicVisual());
     }
 
-<<<<<<< HEAD
-    public static void main(String[] arg)
-    {
-        Main main = new Main();
-		main.MusicVisual();        
-=======
     public void helloProcessing()
 	{
 		String[] a = {"MAIN"};
@@ -33,11 +27,11 @@ public class Main
         processing.core.PApplet.runSketch( a, new BugZap());
     }
     
-    public void sound1()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Sound1());
-    }
+    // public void sound1()
+	// {
+	// 	String[] a = {"MAIN"};
+    //     processing.core.PApplet.runSketch( a, new Sound1());
+    // }
 
     public void sound2()
 	{
@@ -99,7 +93,7 @@ public class Main
     public static void main(String[] arg)
     {
         Main main = new Main();
-		main.sound2();        
->>>>>>> ad2ecaa997019386113b584d9f66dfa01b380b2b
+        // main.sound2();      
+        main.MusicVisual();  
     }
 }
