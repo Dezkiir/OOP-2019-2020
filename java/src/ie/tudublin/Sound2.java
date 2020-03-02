@@ -10,6 +10,8 @@ public class Sound2 extends PApplet
 
 	int frameSize = 1024;
 
+	float frameToSecond = 44100 / (float) frameSize;
+
 	public void settings()
 	{
 		size(1024, 500);
@@ -23,13 +25,34 @@ public class Sound2 extends PApplet
 		colorMode(HSB);
 	}
 
+	int countZeroCrossings()
+	{
+		int count = 0;
+
+		for(int i = 1 ; i < as.bufferSize() ; i ++)
+		{
+			if (as.left.get(i-1) > 0 && as.left.get(i) <= 0)
+			{
+				count ++;
+			}
+		}
+		return count;
+	}
+
 	float lerpedw = 0;
+	float average = 0;
 
 	public void keyPressed()
 	{
-		as.stop();
-		as.trigger();
+		if (key == ' ')
+		{
+			as.stop();
+			as.trigger();
+		}
+
 	}
+
+	float offs = 0;
 	
 	public void draw()
 	{	
@@ -44,10 +67,10 @@ public class Sound2 extends PApplet
 				, 255
 				, 255
 			);
-			//line(i, cy, i, cy + ai.left.get(i) * cy);
+			line(i, cy, i, cy + as.left.get(i) * cy);
 			sum += abs(as.left.get(i));
 		}
-		float average = sum / as.bufferSize();
+		average = sum / as.bufferSize();
 
 		float w  = average * 1000;
 		lerpedw = lerp(lerpedw, w, 0.1f);
@@ -57,7 +80,14 @@ public class Sound2 extends PApplet
 			, 255
 			, 255
 		);
-		ellipse(400 , cy,w, w);
-		ellipse(600 , cy,lerpedw, lerpedw);		
-}
+		//ellipse(400 , cy,w, w);
+		//ellipse(600 , cy,lerpedw, lerpedw);	
+		
+		int count = countZeroCrossings();
+
+		float freq = count * frameToSecond;
+		textSize(22);
+		text(freq, 100, 50);
+
+	}
 }

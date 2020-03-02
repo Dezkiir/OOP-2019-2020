@@ -3,10 +3,10 @@ package ie.tudublin;
 public class Main
 {
 
-    public void MusicVisual()
+    public void helloArrays()
 	{
 		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new MusicVisual());
+        processing.core.PApplet.runSketch( a, new ArraysExample());
     }
 
     public void helloProcessing()
@@ -37,6 +37,12 @@ public class Main
 	{
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new Sound2());
+    }
+
+    public void audioBands()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new AudioBands());
     }
 
     public void airSeaBattle()
@@ -93,7 +99,6 @@ public class Main
     public static void main(String[] arg)
     {
         Main main = new Main();
-        // main.sound2();      
-        main.MusicVisual();  
+		main.audioBands();        
     }
 }
