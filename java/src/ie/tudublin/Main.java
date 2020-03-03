@@ -105,10 +105,9 @@ public class Main
     public static void main(String[] arg)
     {
         Main main = new Main();
-<<<<<<< HEAD
+
 		main.audioBands();        
-=======
 		main.sound1();        
->>>>>>> 9dae6c15e7dec9d5d6f4b208477af206ffa8c292
+		main.sound2();        
     }
 }

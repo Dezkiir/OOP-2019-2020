@@ -4,13 +4,6 @@
 // import ddf.minim.*;
 // import ddf.minim.analysis.*;
 
-<<<<<<< HEAD
-// public class Sound1 extends PApplet
-// {	
-// 	Minim minim;
-// 	AudioInput ai;
-// 	AudioSample as;
-=======
 public class Sound1 extends PApplet
 {	
 	Minim minim;
@@ -22,7 +15,6 @@ public class Sound1 extends PApplet
 	int sampleRate = 44100;
 
 
->>>>>>> 9dae6c15e7dec9d5d6f4b208477af206ffa8c292
 
 // 	public void settings()
 // 	{
@@ -34,14 +26,6 @@ public class Sound1 extends PApplet
 // 		minim = new Minim(this);
 // 		ai = minim.getLineIn(Minim.MONO, width, 44100, 16);
 
-<<<<<<< HEAD
-// 		as = minim.loadSample("heroplanet.mp3");
-// 		//as.trigger();
-// 		colorMode(HSB);
-// 		circy = height / 2;
-// 		lerpedcircley = circy;
-// 	}
-=======
 		colorMode(HSB);
 		circy = height / 2;
 		lerpedcircley = circy;
@@ -49,7 +33,6 @@ public class Sound1 extends PApplet
 		fft = new FFT(frameSize, sampleRate); 
 
 	}
->>>>>>> 9dae6c15e7dec9d5d6f4b208477af206ffa8c292
 
 // 	float offs = 0;
 
@@ -65,25 +48,6 @@ public class Sound1 extends PApplet
 // 			as.left.get(SAMPLE_INDEX);
 // 		}
 
-<<<<<<< HEAD
-// 	public void draw()
-// 	{	
-// 		background(0);		
-// 		stroke(255);
-// 		float cy = height / 2;
-// 		float sum = 0;
-// 		for(int i = 0 ; i < ai.bufferSize() ; i ++)
-// 		{
-// 			stroke(
-// 				map(i, 0, ai.bufferSize(), 0, 255)
-// 				, 255
-// 				, 255
-// 			);
-// 			//line(i, cy, i, cy + ai.left.get(i) * cy);
-// 			sum += abs(ai.left.get(i));
-// 		}
-// 		float average = sum / ai.bufferSize();
-=======
 		float w  = average * 1000;
 		lerpedw = lerp(lerpedw, w, 0.1f);
 		noStroke();
@@ -94,7 +58,6 @@ public class Sound1 extends PApplet
 		);
 		//ellipse(400 , cy,w, w);
 		//ellipse(600 , cy,lerpedw, lerpedw);
->>>>>>> 9dae6c15e7dec9d5d6f4b208477af206ffa8c292
 
 // 		float w  = average * 1000;
 // 		lerpedw = lerp(lerpedw, w, 0.1f);
@@ -107,25 +70,6 @@ public class Sound1 extends PApplet
 // 		ellipse(400 , cy,w, w);
 // 		ellipse(600 , cy,lerpedw, lerpedw);
 
-<<<<<<< HEAD
-
-// 		/*
-// 		for(int i = 0 ; i < as.bufferSize() ; i ++)
-// 		{
-// 			stroke(
-// 				map(i, 0, as.bufferSize(), 0, 255)
-// 				, 255
-// 				, 255
-// 			);
-// 			line(i, cy, i, cy + as.left.get(i) * cy);
-// 		}
-// 		*/
-
-// 		circy += random(-20, 20);
-// 		lerpedcircley = lerp(lerpedcircley, circy, 0.1f);
-// 		ellipse(100, circy, 50, 50);
-// 		ellipse(200, lerpedcircley, 50, 50);
-=======
 		
 		for(int i = 0 ; i < ai.bufferSize() ; i ++)
 		{
@@ -150,7 +94,6 @@ public class Sound1 extends PApplet
 		{
 			line(i, 0, i, fft.getBand(i) * 100);
 		}
->>>>>>> 9dae6c15e7dec9d5d6f4b208477af206ffa8c292
 		
 // 	}
 // }

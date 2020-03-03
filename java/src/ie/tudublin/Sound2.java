@@ -11,15 +11,11 @@ public class Sound2 extends PApplet
 
 	int frameSize = 1024;
 
-<<<<<<< HEAD
-	float frameToSecond = 44100 / (float) frameSize;
-=======
 	int sampleRate = 44100;
 
 	FFT fft;
 
 	float frameToSecond = sampleRate / (float) frameSize;
->>>>>>> 9dae6c15e7dec9d5d6f4b208477af206ffa8c292
 
 	public void settings()
 	{
@@ -99,9 +95,6 @@ public class Sound2 extends PApplet
 
 		float freq = count * frameToSecond;
 		textSize(22);
-<<<<<<< HEAD
-		text(freq, 100, 50);
-=======
 		text("Zero crossings frequency: " + freq, 100, 50);
 
 		fft.window(FFT.HAMMING);
@@ -112,12 +105,16 @@ public class Sound2 extends PApplet
 		for(int i = 0 ; i < fft.specSize() ; i ++)
 		{
 			line(i, 0, i, fft.getBand(i) * 100);
+			if (fft.getBand(i) > fft.getBand(highestBin))
+			{
+				highestBin = i;
+			}
 		}
 
 		float freq1 = fft.indexToFreq(highestBin);
 
+		fill(255);
 		text("FFT Freq: " + freq1, 100, 100);
->>>>>>> 9dae6c15e7dec9d5d6f4b208477af206ffa8c292
 
 	}
 }
