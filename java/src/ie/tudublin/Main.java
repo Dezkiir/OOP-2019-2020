@@ -3,6 +3,11 @@ package ie.tudublin;
 public class Main
 {
 
+    public void soundSynthesis()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new SoundSynthesis());
+    }
     public void helloArrays()
 	{
 		String[] a = {"MAIN"};
@@ -105,9 +110,6 @@ public class Main
     public static void main(String[] arg)
     {
         Main main = new Main();
-
-		main.audioBands();        
-		main.sound1();        
-		main.sound2();        
+		main.soundSynthesis();        
     }
 }
